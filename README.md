@@ -31,7 +31,7 @@ Like working in the command line? Want to know how much driving back and forth t
   * Average $/mi, Mi/$, $/day, $/fillup, Mi/fillup, Days/fillup
   * Total $ Spent
   * Total Gallons Used
-  * Carbon Footprint[1] and Offset Cost @ $10/tonne[2]
+  * [Carbon Footprint] [1] and [Offset Cost @ $10/tonne] [2]
 
 ## Data Source:
 
