@@ -33,7 +33,7 @@ Like working in the command line? Want to know how much driving back and forth t
   * Total Gallons Used
   * [Carbon Footprint] [1] and [Offset Cost @ $10/tonne] [2]
 
-## Data Source:
+## Data Source
 
 User's receipts
 
