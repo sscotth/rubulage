@@ -9,6 +9,7 @@ Like working in the command line? Want to know how much driving back and forth t
   * Simple UX
   * Persistent Relational Database CRUD
   * Statistics Report
+  * Written in Ruby
 
 ## Feature List
 
