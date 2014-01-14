@@ -7,7 +7,7 @@ Like working in the command line? Want to know how much driving back and forth t
 ## Project Requirements
 
   * Simple UX
-  * Persistant Relational Database CRUD
+  * Persistent Relational Database CRUD
   * Statistics Report
 
 ## Feature List
