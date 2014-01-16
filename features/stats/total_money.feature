@@ -4,8 +4,8 @@ Feature: Generic Total Amount Spent
   I want to know the total amount spent
 
   # # Usage:
-  #   ```./mileage stats total money```
-  #
+  #   `./mileage stats total money`
+
   # # Acceptance Criteria:
   #   * Prints out total money spent between the earliest and latest entries
   #   * If not enough information is available, it informs me to enter more data.

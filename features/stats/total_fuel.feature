@@ -4,7 +4,7 @@ Feature: Generic Total Fuel Spent
   I want to know the total fuel spent
 
   # # Usage:
-  #   ```./mileage stats total fuel```
+  #   `./mileage stats total fuel`
   #
   # # Acceptance Criteria:
   #   * Prints out total gallons spent between the earliest and latest entries
