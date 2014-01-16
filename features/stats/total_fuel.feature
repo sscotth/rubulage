@@ -19,5 +19,3 @@ Feature: Generic Total Fuel Spent
     Given I have at least two fuel entries
     When I use the 'stats total fuel' argument
     Then It should display the summed total gallons from my entered receipts
-
-
