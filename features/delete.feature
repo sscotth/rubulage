@@ -30,4 +30,5 @@ Feature: Generic Delete Function
     Then It should display the entry's data and ask to confirm deletion.
     When I press 'y'
     Then It should delete the entry from the database
-    And It should display 'Deleted!'
+    When The entry has been deleted
+    Then It should display 'Deleted!'
