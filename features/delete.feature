@@ -9,13 +9,12 @@ Feature: Generic Delete Function
   # # Acceptance Criteria:
   #   * If id is invalid, it informs me that the id is invalid
   #   * Returns data from entry
-  #   * Asks for confirmation
+  #   * Asks for a deletion confirmation
 
   Scenario: Invalid ID
     Given I have an invalid id
     When I use the 'delete id' argument
     Then It should display 'Invalid Id. Use "list" to find the id and try again.'
-    And It should update the entry to the database
 
   Scenario: No Confirmation
     Given I have a valid id
