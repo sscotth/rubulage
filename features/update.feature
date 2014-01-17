@@ -23,7 +23,11 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
@@ -43,12 +47,38 @@ Feature: Generic Update Function
     Then It should display 'Cannot parse date. Usage: YYYY-MM-DD [HH:MM:SS]'
     And It should prompt me to enter the transaction date
 
+  Scenario: Improper Missed Fill-up Confirmation
+    Given I have a fuel receipt
+    When I use the 'update id' argument
+    Then It should prompt me to enter the transaction date with the prior data filled in
+    When I enter the transaction date
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press any character other than 'y' or 'n'
+    Then It should display 'Cannot confirm. Press "y" or "n"'
+    And It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+
+  Scenario: Improper Partial Fill-up Confirmation
+    Given I have a fuel receipt
+    When I use the 'update id' argument
+    Then It should prompt me to enter the transaction date with the prior data filled in
+    When I enter the transaction date
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press any character other than 'y' or 'n'
+    Then It should display 'Cannot confirm. Press "y" or "n"'
+    And It should ask if this was not a complete fill-up with the prior data filled in
+
   Scenario: Improper Odometer Entry
     Given I have a fuel receipt
     When I use the 'update id' argument
-    Then It should prompt me to enter the transaction date
+    Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter a non-positive or non-numeric string
     Then It should display 'Cannot parse odometer. Usage: 123456.3'
     And It should prompt me to enter the odometer reading
@@ -56,9 +86,13 @@ Feature: Generic Update Function
   Scenario: Invalid Odometer Entry
     Given I have a fuel receipt
     When I use the 'update id' argument
-    Then It should prompt me to enter the transaction date
+    Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter a value that is not above the previous entry's value or below the next entry's value
     Then It should display "Invalid odometer reading. Must be between #{previous_reading} [and #{next_reading}]."
     And It should prompt me to enter the odometer reading
@@ -68,7 +102,11 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter a non-positive or non-numeric string
@@ -80,7 +118,11 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
@@ -94,7 +136,11 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
@@ -109,7 +155,11 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
-    Then It should prompt me to enter the odometer reading
+    Then It should ask if a fill-up was missed between "{#previous_date}" and "#{current_date}" with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should ask if this was not a complete fill-up with the prior data filled in
+    When I press 'y' or 'n'
+    Then It should prompt me to enter the odometer reading with the prior data filled in
     When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
