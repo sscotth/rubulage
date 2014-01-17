@@ -8,7 +8,7 @@ Feature: Generic Total Amount Spent
 
   # # Acceptance Criteria:
   #   * Prints out total money spent between the earliest and latest entries
-  #   * If not enough information is available, it informs me to enter more data.
+  #   * If not enough information is available, it informs me to enter more data
 
   Scenario: One or fewer entries
     Given I have less than two entries
