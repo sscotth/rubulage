@@ -23,6 +23,8 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
     Then It should prompt me to enter the price paid per gallon with the prior data filled in
@@ -41,11 +43,33 @@ Feature: Generic Update Function
     Then It should display 'Cannot parse date. Usage: YYYY-MM-DD [HH:MM:SS]'
     And It should prompt me to enter the transaction date
 
+  Scenario: Improper Odometer Entry
+    Given I have a fuel receipt
+    When I use the 'update id' argument
+    Then It should prompt me to enter the transaction date
+    When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter a non-positive or non-numeric string
+    Then It should display 'Cannot parse odometer. Usage: 123456.3'
+    And It should prompt me to enter the odometer reading
+
+  Scenario: Invalid Odometer Entry
+    Given I have a fuel receipt
+    When I use the 'update id' argument
+    Then It should prompt me to enter the transaction date
+    When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter a value that is not above the previous entry's value or below the next entry's value
+    Then It should display "Invalid odometer reading. Must be between #{previous_reading} [and #{next_reading}]."
+    And It should prompt me to enter the odometer reading
+
   Scenario: Improper Gallons Entry
     Given I have a fuel receipt the id of the previous entry
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter a non-positive or non-numeric string
     Then It should display 'Cannot parse gallons. Usage: 12.345'
@@ -56,6 +80,8 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
     Then It should prompt me to enter the price paid per gallon with the prior data filled in
@@ -68,6 +94,8 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
     Then It should prompt me to enter the price paid per gallon with the prior data filled in
@@ -81,6 +109,8 @@ Feature: Generic Update Function
     When I use the 'update id' argument
     Then It should prompt me to enter the transaction date with the prior data filled in
     When I enter the transaction date
+    Then It should prompt me to enter the odometer reading
+    When I enter the odometer value
     Then It should prompt me to enter the gallons purchased with the prior data filled in
     When I enter the gallons purchased
     Then It should prompt me to enter the price paid per gallon with the prior data filled in
