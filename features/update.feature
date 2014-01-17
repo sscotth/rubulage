@@ -168,6 +168,3 @@ Feature: Generic Update Function
     Then It should prompt me to confirm the entered information with the total amount spent
     When I press 'n' to not confirm
     Then It should display 'Canceled'
-
-
-
