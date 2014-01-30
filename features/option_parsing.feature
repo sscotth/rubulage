@@ -1,4 +1,3 @@
-@wip
 Feature: Parse command line options
   As a car owner
   In order to efficiently use the app on the command line
