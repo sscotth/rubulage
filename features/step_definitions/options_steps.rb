@@ -1,4 +1,4 @@
-When /^I use the "([^"]*)" option$/ do |cmd|
+When /^I use the "([^"]*)" (?:option|command|argument)$/ do |cmd|
   run_simple("rubulage #{unescape(cmd)}")
 end
 

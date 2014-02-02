@@ -12,7 +12,7 @@ Feature: Parse command line options
       | --odo     |
       | --id      |
       | --gal     |
-      | --ppg     |
+      | --price   |
       | --missed  |
       | --partial |
       | --version |

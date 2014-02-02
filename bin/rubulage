@@ -2,4 +2,4 @@
 
 require 'rubulage.rb'
 
-options = Rubulage::Options.parse
+options = Rubulage::Options.parse(ARGV)
