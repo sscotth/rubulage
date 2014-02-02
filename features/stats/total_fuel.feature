@@ -1,3 +1,4 @@
+@pending
 Feature: Generic Total Fuel Spent
   As a car owner
   In order to know much I spend on gas
