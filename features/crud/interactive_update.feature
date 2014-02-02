@@ -1,4 +1,5 @@
-Feature: Generic Update Function
+@pending
+Feature: Interactive Update Function
   As a car owner
   In order to know much I spend on gas
   I want to enter update a previously entered fuel receipt

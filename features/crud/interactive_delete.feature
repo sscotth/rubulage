@@ -1,4 +1,5 @@
-Feature: Generic Delete Function
+@pending
+Feature: Interactive Delete Function
   As a car owner
   In order to know much I spend on gas
   I want to delete a previously entered fuel receipt

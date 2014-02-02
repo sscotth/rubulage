@@ -1,4 +1,5 @@
-Feature: Generic Add Function
+@pending
+Feature: Interactive Add Function
   As a car owner
   In order to know much I spend on gas
   I want to enter in my fuel receipts
