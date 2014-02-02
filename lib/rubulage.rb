@@ -1,2 +1,2 @@
 require 'rubulage/version'
-require 'rubulage/option_parser'
+require 'rubulage/options'
