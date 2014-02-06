@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('sqlite3')
+  s.add_dependency('terminal-table')
 
   s.add_development_dependency('bundler')
   s.add_development_dependency('rake')

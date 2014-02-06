@@ -2,4 +2,11 @@
 
 require 'rubulage.rb'
 
-options = Rubulage::Options.parse(ARGV)
+module Rubulage
+  options = Options.parse(ARGV)
+
+  if options[:command]
+    Commands.send(options[:command].to_sym, options)
+  end
+
+end
