@@ -13,7 +13,7 @@ module Rubulage
         opts.banner = 'Usage: rubulage [command] [options]'
 
         opts.on('-d', '--date DATE', Time, 'Transaction Date: yyyy/mm/sss [hh:mm:ss]') do |date|
-          options[:date] = date
+          options[:date] = date.to_i
         end
 
         opts.on('-o', '--odo ODOMETER', Float, 'Odometer Reading: 1234567.8') do |odo|
