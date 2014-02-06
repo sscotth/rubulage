@@ -2,20 +2,6 @@ require 'spec_helper'
 
 module Rubulage
   describe "#create" do
-    before(:each) do
-      db = Database.connection
-      db.execute('DROP TABLE IF EXISTS transactions')
-      db.execute('CREATE TABLE transactions (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date DATETIME NOT NULL,
-        odometer INTEGER NOT NULL,
-        price INTEGER NOT NULL,
-        gallons INTEGER NOT NULL,
-        total INTEGER NOT NULL,
-        missed TINYINT(1) NOT NULL DEFAULT 0,
-        partial TINYINT(1) NOT NULL DEFAULT 0
-      )')
-    end
 
     context "with valid attributes" do
       valid = {date: Time.now, odometer: 123, gallons: 123, price: 123}
@@ -27,7 +13,7 @@ module Rubulage
       it "returns the saved object" do
         tx = Transactions.create!(valid)
         expect(tx.class).to eq(Transactions)
-        expect(tx.id).to eq(1)
+        expect(tx.id.class).to eq(Fixnum)
       end
     end
 
