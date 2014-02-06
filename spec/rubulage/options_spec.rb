@@ -5,14 +5,15 @@ module Rubulage
     describe 'self.parse' do
 
       it '-d returns a datetime' do
-        date = Time.at(1388534400)
+        unixdate = 1388534400
         options = Options.parse(['-d','2014/1/1 0:0:0 GMT'])
-        options[:date].should eq(date)
+        options[:date].should eq(unixdate)
       end
 
       it '--date returns a datetime' do
-        options = Options.parse(['--date','2014-1-1'])
-        options[:date].should eq(Time.parse('2014-1-1 00:00:00'))
+        unixdate = 1388534400
+        options = Options.parse(['--date','2014-1-1 12:00AM GMT'])
+        options[:date].should eq(unixdate)
       end
 
       it '-o returns a float rounded to 1 decimal' do
