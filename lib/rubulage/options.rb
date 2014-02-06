@@ -24,7 +24,7 @@ module Rubulage
           options[:id] = id
         end
 
-        opts.on('-g', '--gal GAL', Float, 'Gallons Purchased: 12.345') do |gal|
+        opts.on('-g', '--gal GALLONS', Float, 'Gallons Purchased: 12.345') do |gal|
           options[:gallons] = gal.round(3)
         end
 
