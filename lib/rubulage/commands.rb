@@ -33,5 +33,10 @@ module Rubulage
       puts Transactions.to_table(results)
     end
 
+    def self.stats(options)
+      puts ""
+      puts Stats.to_table(Stats.output_hash)
+      puts ""
+    end
   end
 end
