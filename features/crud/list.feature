@@ -10,22 +10,22 @@ Feature: Generic List Function
       | 2014-1-2 | 12456    | 1.109 | 12.5    |
 
   Scenario: Request All Entries
-    When I use the "list" argument
+    When I use the "list" command
     Then the output should contain a table
     And the output should contain "01/01/2014"
     And the output should contain "01/02/2014"
 
-    When I use the "list all" argument
+    When I use the "list all" command
     Then the output should contain a table
     And the output should contain "01/01/2014"
     And the output should contain "01/02/2014"
 
   Scenario: Request Single Entry
-    When I use the "list 1" argument
+    When I use the "list" command with an id
     Then the output should contain a table
-    And the output should contain "01/01/2014"
+    And the output should contain "01/02/2014"
 
   Scenario: Invalid ID
-    When I use the "list 123" argument
+    When I use the "list 99999999999999999" command
     Then the output should contain a table
     And the output should not contain "01/01/2014"
