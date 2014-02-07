@@ -1,33 +1,31 @@
-@pending
 Feature: Generic List Function
   As a car owner
   In order to know much I spend on gas
   I want to list out all my fuel receipts
 
-  # # Usage:
-  #   `./mileage list [id]`
-  #
-  # # Acceptance Criteria:
-  #   * Returns data from entry, or if no id is passed, a list of all entered data
-  #   * If not enough information is available, it informs me to enter more data
-  #   * If id is invalid, it informs me that the id is invalid
+  Background:
+    Given the following transaction records
+      | date     | odometer | price | gallons |
+      | 2014-1-1 | 12345    | 1.009 | 12.5    |
+      | 2014-1-2 | 12456    | 1.109 | 12.5    |
 
   Scenario: Request All Entries
-    Given I have at least one fuel entry
-    When I use the 'list' argument
-    Then It should display a list with each transaction's data
+    When I use the "list" argument
+    Then the output should contain a table
+    And the output should contain "01/01/2014"
+    And the output should contain "01/02/2014"
 
-  Scenario: No entries
-    Given I have no entries
-    When I use the 'list' argument
-    Then It should prompt me to enter more data
+    When I use the "list all" argument
+    Then the output should contain a table
+    And the output should contain "01/01/2014"
+    And the output should contain "01/02/2014"
 
   Scenario: Request Single Entry
-    Given I have a valid id
-    When I use the 'list id' argument
-    Then It should display the id's transaction data
+    When I use the "list 1" argument
+    Then the output should contain a table
+    And the output should contain "01/01/2014"
 
   Scenario: Invalid ID
-    Given I have an invalid id
-    When I use the 'list id' argument
-    Then It should display 'Invalid Id. Use "list" to find the id and try again.'
+    When I use the "list 123" argument
+    Then the output should contain a table
+    And the output should not contain "01/01/2014"

@@ -23,5 +23,15 @@ module Rubulage
       end
     end
 
+    def self.list(options)
+      options[:argv1] ||= 'all'
+      if options[:argv1] == 'all'
+        results = Transactions.all
+      else
+        results = Transactions.find(options[:argv1].to_i)
+      end
+      puts Transactions.to_table(results)
+    end
+
   end
 end

@@ -48,6 +48,7 @@ module Rubulage
       end.parse(args)
 
       options[:command] = ARGV[0]
+      options[:argv1] = ARGV[1]
       options
 
     end
