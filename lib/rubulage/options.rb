@@ -11,6 +11,9 @@ module Rubulage
 
       OptionParser.new do |opts|
         opts.banner = 'Usage: rubulage [command] [options]'
+        opts.separator ""
+        opts.separator "Commands: add, list, stats, import"
+        opts.separator ""
 
         opts.on('-d', '--date DATE', Time, 'Transaction Date: yyyy/mm/sss [hh:mm:ss]') do |date|
           options[:date] = date.to_i

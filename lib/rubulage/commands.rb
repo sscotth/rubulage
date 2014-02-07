@@ -1,4 +1,5 @@
 require 'terminal-table'
+require 'rubulage/importer'
 
 module Rubulage
 
@@ -37,6 +38,10 @@ module Rubulage
       puts ""
       puts Stats.to_table(Stats.output_hash)
       puts ""
+    end
+
+    def self.import(options)
+      Rubulage::Importer.csv(options[:argv1])
     end
   end
 end
