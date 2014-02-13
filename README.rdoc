@@ -1,0 +1,6 @@
+= rubulage
+
+Describe your project here
+
+:include:rubulage.rdoc
+

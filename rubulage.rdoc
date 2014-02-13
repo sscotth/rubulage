@@ -1,0 +1,5 @@
+= rubulage
+
+Generate this with
+    rubulage rdoc
+After you have described your command line interface
