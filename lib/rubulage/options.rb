@@ -63,7 +63,8 @@ module Rubulage
     end
 
     def self.round_down(float, precision=0)
-      precision < 1 ? float.to_i : (float - 0.5 / 10 ** precision).round(precision)
+      mult = 10 ** precision.floor.to_f
+      precision < 1 ? float.floor : (float * mult).floor / mult
     end
 
   end
